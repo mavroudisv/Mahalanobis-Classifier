@@ -1,6 +1,5 @@
 import numpy as np
 import scipy as sp
-import sys
 
 class MahalanobisClassifier():
     def __init__(self, samples, labels):
@@ -8,7 +7,7 @@ class MahalanobisClassifier():
         for lbl in np.unique(labels):
             self.clusters[lbl] = samples.loc[labels == lbl, :]
 
-    def mahalanobis(self, x=None, data=None, cov=None):
+    def mahalanobis(self, x, data, cov=None):
         """Compute the Mahalanobis Distance between each row of x and the data  
         x    : vector or matrix of data with, say, p columns.
         data : ndarray of the distribution from which Mahalanobis distance of each observation of x is to be computed.
